@@ -6,7 +6,7 @@
 
         <p>Add a snippet of RDF and select an ontology to generate a graph.</p>
 
-        <form method="post" action="/submit">
+        <form method="post" action="{{ url_for('submit') }}">
             <div class="form-group">
                 <label for="rdf-data"><strong>RDF Textbox</strong></label>
                 <textarea class="form-control" id="rdf-data" name="rdf-data" rows="30">@prefix : <http://dig.isi.edu/> .
