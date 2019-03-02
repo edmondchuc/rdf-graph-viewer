@@ -66,16 +66,9 @@
       color: 'red'
     }
 
+    // options = {layout:{randomSeed:2}};
     // create a network
-    var network = new vis.Network(container, data,
-      {
-        "physics": {
-          "barnesHut": {
-            "springLength":500, "springConstant": 0.01
-          }
-        }
-      }
-    );
+    var network = new vis.Network(container, data, options);
 
 
   </script>
