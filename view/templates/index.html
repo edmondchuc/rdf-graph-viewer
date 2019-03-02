@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>RDF Graph Viewer</h1>
+
+        <p>Add a snippet of RDF and select an ontology to generate a graph.</p>
+
+        <form method="post" action="/submit">
+            <div class="form-group">
+                <label for="rdf-data"><strong>RDF Textbox</strong></label>
+                <textarea class="form-control" id="rdf-data" name="rdf-data" rows="30">@prefix : <http://dig.isi.edu/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:John a :Man ;
+    :name "John" ;
+    :hasSpouse :Mary .
+:Mary a :Woman ;
+    :name "Mary" ;
+    :hasSpouse :John .
+:John_jr a :Man ;
+    :name "John Jr." ;
+    :hasParent :John, :Mary .
+:Time_Span a owl:Class .
+:event a :Activity ;
+    :has_time_span [
+        a :Time_Span ;
+        :at_some_time_within_date "2018-01-12"^^xsd:date
+        ] .
+:u129u-klejkajo-2309124u-sajfl a :Person ;
+    :name "John Doe" .</textarea>
+
+                <div class="form-group">
+                    <label for="rdf-type"><strong>RDF Serialisation</strong></label>
+                    <select id="rdf-type" name="rdf-type" class="form-control">
+                        <option selected value="turtle">text/turtle</option>
+                        <option value="xml">application/rdf+xml</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ontology-type"><strong>Ontology</strong></label>
+                    <select id="ontology-type" name="ontology-type" class="form-control">
+                        <option selected label="Web Ontology Language" value="owl">OWL - Web Ontology Language</option>
+                        <option label="Simple Knowledge Organization Language" value="skos">SKOS - Simple Knowledge Organization Language</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}

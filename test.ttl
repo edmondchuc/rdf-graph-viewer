@@ -1,0 +1,36 @@
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#ConceptScheme> a dcat:Dataset ;
+    dct:created "2019-02-12"^^xsd:date ;
+    dct:title "borehole-status"@en ;
+    skos:hasTopConcept <http://test.linked.data.gov.au/def/gsq-borehole-status#injecting>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#never_drilled>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#plugged_and_abandoned>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#producing_hydrocarbons>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#proposed_to_be_drilled>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#suspended,_capped_or_shut-in>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#unknown>,
+        <http://test.linked.data.gov.au/def/gsq-borehole-status#water_bore> .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#injecting> skos:prefLabel "injecting"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#never_drilled> skos:prefLabel "never drilled"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#plugged_and_abandoned> skos:prefLabel "plugged and abandoned"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#producing_hydrocarbons> skos:prefLabel "producing hydrocarbons"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#proposed_to_be_drilled> skos:prefLabel "proposed to be drilled"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#suspended,_capped_or_shut-in> skos:prefLabel "suspended, capped or shut-in"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#unknown> skos:prefLabel "unknown"@en .
+
+<http://test.linked.data.gov.au/def/gsq-borehole-status#water_bore> skos:prefLabel "water bore"@en .

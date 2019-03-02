@@ -1,0 +1,4 @@
+rdflib
+flask
+owlrl
+git+https://github.com/edmondchuc/ontology-visualization.git#egg=ontology_visualization

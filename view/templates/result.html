@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html>
+ <head>
+  <title>Graph | Dodecahedral Graph</title>
+  <script src="http://visjs.org/dist/vis.js"></script>
+  <link href="http://visjs.org/dist/vis.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <style type="text/css">
+   #graph {
+    width: 1024;
+    height: 1024px;
+    border: 1px solid lightgray;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="graph"></div>
+  <script type="text/javascript">
+    var options = {
+      smoothCurves: true,
+      physics: {
+        repulsion: {
+          centralGravity: 0.1,
+          springLength: 250,
+          nodeDistance: 250,
+          springConstant: 0.05,
+          damping: 0.09
+        }
+      },
+      edges: {
+        width: 3,
+        style: 'line',
+        color: {
+          color: 'black',
+          highlight: 'grey'
+        }
+      },
+      nodes: {
+        shape: 'circle',
+        fontColor: 'black',
+        color: {
+          border: 'black',
+          background: 'black',
+          highlight: {
+            border: 'grey',
+            background: 'grey'
+          }
+        }
+      }
+    };
+
+    var container = document.getElementById('graph');
+    var DOTstring = `{{ graph|safe }}`
+    var parsedData = vis.network.convertDot(DOTstring);
+
+    var data = {
+      nodes: parsedData.nodes,
+      edges: parsedData.edges
+    }
+
+    var options = parsedData.options;
+
+    // you can extend the options like a normal JSON variable:
+    options.nodes = {
+      color: 'red'
+    }
+
+    // create a network
+    var network = new vis.Network(container, data,
+      {
+        "physics": {
+          "barnesHut": {
+            "springLength":500, "springConstant": 0.01
+          }
+        }
+      }
+    );
+
+
+  </script>
+ </body>
+</html>
