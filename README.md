@@ -2,6 +2,8 @@
 
 A simple flask web application that parses [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) and transforms it to a [graph description language](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) (DOT) file. It responds with a graph view of the RDF using [visjs.org](http://visjs.org/).
 
+**Demo** at https://edmondchuc.com/rdf-graph-viewer/
+
 
 # Dependencies
 
